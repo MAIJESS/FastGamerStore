@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FastGamer Store – Recargas de Free Fire, Call of Duty Mobile y Blood Strike</title>
+<meta name="description" content="Recarga diamantes de Free Fire, CP de Call of Duty Mobile y oro de Blood Strike. Paga por PayPal con precios en tu moneda.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%AE%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="FastGamer Store">
+<meta property="og:description" content="Recargas de Free Fire, Call of Duty Mobile y Blood Strike. Paga por PayPal con precios en tu moneda.">
+<meta name="theme-color" content="#0E0828">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0828;--surface:#1A1048;--ink:#EEF4FF;--muted:#A9A3D9;--line:#4A2FA0;--accent:#22E5F0;--pink:#FF6AD5;--sel:#2A1A6E;--tg:#229ED9;--wa:#1FA855;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -5%,#3B1B93 0,transparent 55%) no-repeat,var(--bg);color:var(--ink);font:16px/1.45 "DM Sans",system-ui,sans-serif;padding-bottom:110px}
+h1,h2,.num{font-family:"Bricolage Grotesque","DM Sans",sans-serif}
+main{max-width:640px;margin:0 auto;padding:20px 16px}
+h1{font-size:2rem;font-weight:800;font-style:italic;letter-spacing:-.02em;margin:0;background:linear-gradient(90deg,#22E5F0,#C77DFF);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 10px rgba(34,229,240,.45))}
+h2{font-size:1.15rem;font-weight:600;margin:0 0 10px}
+section{margin-top:26px}
+p{margin:6px 0 0;color:var(--muted)}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+select,input{width:100%;padding:13px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.top select{width:auto;max-width:150px;padding:9px}
+select:focus,input:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.games{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
+.game,.pack{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:16px;padding:12px;text-align:left;font:inherit;cursor:pointer}
+.game{flex:0 0 auto;min-width:120px}
+.game .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;font-weight:800;color:#fff;margin-bottom:8px}
+.game small,.pack span{color:var(--muted)}
+.packs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pack b{font-size:1.2rem;display:block;font-family:"Bricolage Grotesque",sans-serif}
+[aria-pressed=true]{border-color:var(--accent);background:var(--sel);box-shadow:0 0 12px rgba(34,229,240,.45)}
+.hint{font-size:.85rem;color:var(--muted);margin-top:6px}
+.err{color:var(--pink);font-size:.9rem;min-height:1.2em;margin-top:6px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--accent);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:flex;gap:12px;align-items:center;justify-content:center}
+.bar>div{flex:1;max-width:300px;min-width:0}.bar small{color:var(--muted);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar strong{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem}
+.btn{display:block;text-align:center;text-decoration:none;border:0;border-radius:14px;padding:14px 20px;font:700 1rem "DM Sans",sans-serif;cursor:pointer;color:#fff;background:linear-gradient(90deg,#0891B2,#7C3AED);box-shadow:0 0 14px rgba(34,229,240,.35)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.modal{position:fixed;inset:0;background:rgba(10,8,40,.6);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.modal.on{display:flex}
+.sheet{background:var(--surface);width:100%;max-width:640px;max-height:92%;overflow:auto;border-radius:22px 22px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px))}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:12px 0}
+dt{color:var(--muted)}dd{margin:0;text-align:right;font-weight:500}
+.step{margin-top:14px;padding:12px;border-radius:14px;background:var(--sel)}
+.step b{display:block;margin-bottom:8px}
+.row{display:flex;gap:8px}.row .btn{flex:1}
+.close{background:transparent;color:var(--ink);border:2px solid var(--line);width:100%;margin-top:14px}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:up .25s ease-out}@keyframes up{from{transform:translateY(40px);opacity:0}}}
+</style>
+</head>
+<body>
+<main>
+<div class="top">
+<div><h1>FastGamer Store</h1><p>Recargas rápidas para tus juegos.</p></div>
+<select id="country" aria-label="Tu país"></select>
+</div>
+
+<section><h2>1. Juego</h2><div class="games" id="games"></div></section>
+
+<section>
+<h2>2. Tu ID de jugador</h2>
+<input id="uid" inputmode="numeric" autocomplete="off" aria-label="ID de jugador" placeholder="Ej: 1234567890">
+<div class="hint" id="hint"></div>
+<div class="err" id="err" role="alert"></div>
+</section>
+
+<section><h2>3. Paquete</h2><div class="packs" id="packs"></div>
+<p class="hint" id="ratenote"></p></section>
+</main>
+
+<div class="bar">
+<div><small id="sum">Elige un paquete</small><strong id="total">—</strong></div>
+<button class="btn" id="buy" disabled>Continuar</button>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt">
+<div class="sheet">
+<h2 id="mt">Tu pedido</h2>
+<dl id="detail"></dl>
+<div class="step"><b>Paso 1: paga por PayPal</b>
+<a class="btn" id="paylink" target="_blank" rel="noopener">Pagar con PayPal</a>
+<div class="hint" id="paynote"></div></div>
+<div class="step"><b>Paso 2: avísame que ya pagaste</b>
+<div class="row"><a class="btn" style="background:var(--tg)" id="tg" target="_blank" rel="noopener">Telegram</a><a class="btn" style="background:var(--wa)" id="wa" target="_blank" rel="noopener">WhatsApp</a></div>
+<div class="hint">Se abre un mensaje con tu pedido ya escrito. Adjunta la captura del pago. Cuando haga la recarga, te confirmo por el mismo chat.</div></div>
+<button class="btn close" id="close">Cerrar</button>
+</div>
+</div>
+
+<script>
+/* ====== CONFIGURA AQUÍ ====== */
+const PAYPAL_USER="FastGamerStor3"; // el nombre de tu enlace paypal.me/…
+const TELEGRAM="maijes";
+const WHATSAPP="593987076438";
+const MARGIN=1.18; // 1.18 = 18% de ganancia sobre el precio base en USD
+/* Tipos de cambio de referencia (se actualizan a mano). extra = margen adicional por riesgo de cambio */
+const COUNTRIES={
+EC:{n:"Ecuador",c:"USD",r:1},
+MX:{n:"México",c:"MXN",r:18.5},
+CO:{n:"Colombia",c:"COP",r:4000},
+AR:{n:"Argentina",c:"ARS",r:1450,extra:1.08},
+PE:{n:"Perú",c:"PEN",r:3.6},
+CL:{n:"Chile",c:"CLP",r:950},
+BO:{n:"Bolivia",c:"BOB",r:6.96},
+UY:{n:"Uruguay",c:"UYU",r:40},
+PY:{n:"Paraguay",c:"PYG",r:7500},
+ES:{n:"España",c:"EUR",r:0.92},
+US:{n:"Estados Unidos",c:"USD",r:1}
+};
+/* Precios base en USD (referencia de Ecuador). Edita según lo que te cueste cada recarga. */
+const GAMES=[
+{id:"ff",name:"Free Fire",cur:"Diamantes",color:"#F2742B",ini:"FF",hint:"Tu ID está en el perfil del juego, debajo de tu nombre.",packs:[[100,0.99],[310,2.99],[520,4.99],[1060,9.99],[2180,19.99]]},
+{id:"cod",name:"Call of Duty Mobile",cur:"CP",color:"#3F5F3A",ini:"CD",hint:"En Ajustes, pestaña Legal y privacidad, copia tu Player ID.",packs:[[80,0.99],[400,4.99],[800,9.99],[2000,24.99],[5000,49.99]]},
+{id:"bs",name:"Blood Strike",cur:"Oro",color:"#B3261E",ini:"BS",hint:"Toca tu avatar en el lobby y copia tu UID.",packs:[[100,0.99],[300,2.99],[520,4.99],[1050,9.99],[2200,19.99]]}
+];
+/* ============================ */
+const $=id=>document.getElementById(id);
+const st={g:GAMES[0],p:null,cc:"EC"};
+const TZ={"America/Guayaquil":"EC","America/Mexico_City":"MX","America/Bogota":"CO","America/Lima":"PE","America/Santiago":"CL","America/La_Paz":"BO","America/Montevideo":"UY","America/Asuncion":"PY","Europe/Madrid":"ES"};
+function detect(){
+ try{const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";
+ if(TZ[tz])return TZ[tz];if(tz.indexOf("America/Argentina")===0)return"AR";
+ const r=(navigator.language||"").split("-")[1];if(r&&COUNTRIES[r.toUpperCase()])return r.toUpperCase();}catch(e){}
+ return"EC";
+}
+function usd(base){return Math.ceil(base*MARGIN*(COUNTRIES[st.cc].extra||1)*100)/100;}
+function local(u){
+ const C=COUNTRIES[st.cc];let v=u*C.r;
+ if(C.r>=100)v=Math.ceil(v/50)*50;else if(C.r>=30)v=Math.ceil(v);
+ try{return new Intl.NumberFormat("es",{style:"currency",currency:C.c,maximumFractionDigits:C.r>=30?0:2}).format(v)}catch(e){return v.toFixed(2)+" "+C.c}
+}
+const usdTxt=u=>"$"+u.toFixed(2)+" USD";
+const priceLabel=u=>st.cc==="EC"||COUNTRIES[st.cc].c==="USD"?usdTxt(u):local(u);
+
+function renderGames(){
+ $("games").innerHTML=GAMES.map(g=>`<button class="game" aria-pressed="${g===st.g}" data-id="${g.id}"><span class="ic" style="background:${g.color}">${g.ini}</span><b>${g.name}</b><br><small>${g.cur}</small></button>`).join("");
+ $("games").querySelectorAll("button").forEach(b=>b.onclick=()=>{st.g=GAMES.find(x=>x.id===b.dataset.id);st.p=null;renderAll()});
+}
+function renderPacks(){
+ $("packs").innerHTML=st.g.packs.map((p,i)=>`<button class="pack" aria-pressed="${st.p===i}" data-i="${i}"><b>${p[0].toLocaleString("es")}</b><span>${st.g.cur}</span><br><b style="font-size:1rem">${priceLabel(usd(p[1]))}</b></button>`).join("");
+ $("packs").querySelectorAll("button").forEach(b=>b.onclick=()=>{st.p=+b.dataset.i;renderPacks();renderBar()});
+ const C=COUNTRIES[st.cc];
+ $("ratenote").textContent=C.c==="USD"?"Precios en dólares.":"Precio aproximado en "+C.c+". El pago se cobra en dólares por PayPal, que hace la conversión final.";
+}
+function renderBar(){
+ const p=st.p===null?null:st.g.packs[st.p];
+ $("sum").textContent=p?p[0].toLocaleString("es")+" "+st.g.cur+" · "+st.g.name:"Elige un paquete";
+ $("total").textContent=p?priceLabel(usd(p[1])):"—";
+ $("buy").disabled=!p;
+}
+function renderAll(){renderGames();renderPacks();renderBar();$("hint").textContent=st.g.hint;$("err").textContent="";}
+
+$("country").innerHTML=Object.keys(COUNTRIES).map(k=>`<option value="${k}">${COUNTRIES[k].n}</option>`).join("");
+st.cc=detect();$("country").value=st.cc;
+$("country").onchange=e=>{st.cc=e.target.value;renderPacks();renderBar()};
+
+$("buy").onclick=()=>{
+ const uid=$("uid").value.trim();
+ if(!/^\d{6,14}$/.test(uid)){$("err").textContent="Escribe tu ID con 6 a 14 números.";$("uid").focus();return}
+ const p=st.g.packs[st.p],u=usd(p[1]),C=COUNTRIES[st.cc];
+ const code="R-"+Math.random().toString(36).slice(2,7).toUpperCase();
+ $("detail").innerHTML=`<dt>Pedido</dt><dd>${code}</dd><dt>Juego</dt><dd>${st.g.name}</dd><dt>ID</dt><dd>${uid}</dd><dt>Paquete</dt><dd>${p[0].toLocaleString("es")} ${st.g.cur}</dd><dt>Total</dt><dd><b>${usdTxt(u)}</b></dd>`+(C.c!=="USD"?`<dt>Aprox.</dt><dd>${local(u)}</dd>`:"");
+ const pp=false;
+ $("paylink").href=pp?"#":`https://paypal.me/${PAYPAL_USER}/${u.toFixed(2)}USD`;
+ $("paynote").textContent=pp?"Falta configurar el PayPal del vendedor.":"Pagas "+usdTxt(u)+". Elige la opción de enviar a un vendedor o por bienes y servicios.";
+ const msg=`Hola, quiero esta recarga:\nPedido: ${code}\nJuego: ${st.g.name}\nID: ${uid}\nPaquete: ${p[0]} ${st.g.cur}\nTotal: ${usdTxt(u)}\nPaís: ${C.n}\nYa realicé el pago, adjunto la captura.`;
+ $("tg").href=`https://t.me/${TELEGRAM}?text=${encodeURIComponent(msg)}`;
+ $("wa").href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+ $("modal").classList.add("on");
+};
+$("close").onclick=()=>$("modal").classList.remove("on");
+$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("on")};
+renderAll();
+</script>
+</body>
+</html>
